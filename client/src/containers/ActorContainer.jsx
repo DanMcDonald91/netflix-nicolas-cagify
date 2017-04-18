@@ -37,11 +37,12 @@ setFocusMedia(media){
 handleClick(event){
   this.setState({
     actor: (document.getElementById("find-actor").value)
+    
 
-}
-)
-
+},
+() => {
   var url = "http://netflixroulette.net/api/api.php?actor=" + this.state.actor;
+  console.log(url)
 
   var request = new XMLHttpRequest();
   request.open("GET", url);
@@ -54,6 +55,11 @@ handleClick(event){
   };
   request.send();
 
+}
+
+)
+
+  
   
 
 
